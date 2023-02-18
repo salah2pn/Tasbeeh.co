@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="CSSFiles/Prayer-Timing.css">
+        <title>مواقيت الصلاة</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <nav class="main-nav" style="background: linear-gradient(#200016,#10001f); padding-bottom: 40.3px; padding-top: 31px; margin-top: 0px; padding-left: 60px; padding-right: 40px; margin-left: 0;">
+            <div class="logo"></div>
+            <ul class="nav-links">
+                <li><a href="MainMenu.html">الصفحة الرئيسية</a></li>
+                <li><a href="Prayer-Timing.html">مواقيت الصلاة</a></li>
+                <li><a href="Quran.html">القرآن الكريم</a></li>
+                 <li><a href="Azkar.html">اذكار وادعية</a></li>
+                 <li><a href="Tasbeeh.html">تسبيح</a></li>
+                  <li><a href="Ahadeath.html">آيات وأحاديث</a></li>
+           </ul>
+           <div class="burger">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+           </div>
+        </nav>
+
+
+    </body>
+            
+    <style>
+        iframe {width: 100%; margin-top:77px; height:400px;}
+    </style>
+    <iframe name="Quran" src="https://timesprayer.today/search" scrolling=""></iframe>
+
+            <script src="JavaScriptFiles/Prayer-Timing.js"></script>
+</html>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Tajawal", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.main-nav {
+  display: flex;
+  height: 8vh;
+  justify-content: space-between;
+  align-items: center;
+  color: #daf8e3;
+  background: #005582;
+}
+.logo {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  padding: 0 2rem;
+}
+.nav-links {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+.burger {
+  display: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.line {
+  height: 2px;
+  width: 35px;
+  margin: 0.5rem 0;
+  background: #daf8e3;
+  transition: transform 0.75s ease, opacity 0.75s ease;
+}
+
+@media screen and (max-width: 800px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
+.main-nav.show .line1 {
+  transform: translate(-10px) rotate(45deg) translate(15px);
+}
+.main-nav.show .line2 {
+  opacity: 0;
+}
+.main-nav.show .line3 {
+  transform: translate(-10px) rotate(-45deg) translate(15px);
+}
+.main-nav.show .nav-links {
+  transform: translateX(0%);
+}
+@media screen and (max-width: 800px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .burger {
+    display: block;
+  }
+  .nav-links {
+    position: fixed;
+    top: 8vh;
+    right: 0;
+    height: 92vh;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: #10001f;
+    transform: translateX(100%);
+    transition: transform 1s ease;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+  }
+}
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', nav)
+function nav(){
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.main-nav');
+    burger.addEventListener('click', ()=>{
+        nav.classList.toggle('show')
+    })
+}
+</script>
+
